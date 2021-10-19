@@ -1,0 +1,84 @@
+$gamburgerColor: #e9eae2;
+$gamburgerColorActive: #f8c255;
+.hamburger {
+	$self: &;
+	display: block;
+	border: 3px solid $gamburgerColor;
+	background: none;
+	cursor: pointer;
+	transition-property: border-color;
+	transition-duration: 500ms;
+	&:hover, &:active {
+		border-color: $gamburgerColorActive;
+		.hamburger__element {
+			background-color: $gamburgerColorActive;
+			&::after, &::before {
+				background-color: $gamburgerColorActive;
+			}
+		}
+	}
+
+	&:focus {
+		border-color: $gamburgerColorActive;
+	}
+
+	&_active {
+		position: relative;
+		z-index: 1;
+		border-color: $gamburgerColorActive;
+		&:hover, &:active {
+			border-color: $gamburgerColorActive;
+			.hamburger__element {
+				background-color: $white;
+				&::after, &::before {
+					background-color: $white;
+				}	
+			}
+		}
+
+		.hamburger__element {
+			transform: rotate(45deg);
+			
+			&::after {
+			transform: rotate(-90deg);
+			position: relative;
+			z-index: 1;
+			}
+
+			&::before {
+			display: none;
+			}
+		}
+	}
+	 
+	&__element {
+		display: block;
+		width: 40px;
+		height: 3px;
+		margin: 0 auto;
+		background-color: $gamburgerColor;
+		transition-property: background-color;
+		transition-duration: 500ms;
+		
+		&::after, &::before {
+			display: block;
+			content: '';
+			width: 40px;
+			height: 3px;
+			margin: 0 auto;
+			background-color: $gamburgerColor;
+		}
+
+		&::after {
+			transform: translateY(4px);
+			transition-property: background-color;
+			transition-duration: 500ms;
+		}
+		&::before {
+			transform: translateY(-7px);
+			transition-property: background-color;
+			transition-duration: 500ms;
+		}
+
+	}
+}

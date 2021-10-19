@@ -1,0 +1,42 @@
+@@include("_head.html", {"class":"home"})
+<div class="container">
+    @@include("_header.html")
+    <nav class="menu">
+        <ul class="menu__list">
+            <li class="menu__element">
+                <a class="menu__link" href="#">
+                    Home
+                </a>
+            </li>
+            <li class="menu__element">
+                <a class="menu__link" href="#">
+                    Projects
+                </a>
+            </li>
+            <li class="menu__element">
+                <a class="menu__link" href="#">
+                    Studio
+                </a>
+            </li>
+            <li class="menu__element">
+                <a class="menu__link" href="#">
+                    News
+                </a>
+            </li>
+            <li class="menu__element">
+                <a class="menu__link" href="#">
+                    Contact
+                </a>
+            </li>
+        </ul>
+        <button class="menu__hamburger hamburger" aria-label="Кнопка меню">
+            <span class="hamburger__element"></span>
+        </button>
+    </nav>
+    <main class="main">
+        @@include("_projects.html")
+        @@include("_studio.html")
+        @@include("_news.html")
+    </main>
+</div>
+@@include("_bottom.html")

@@ -1,0 +1,100 @@
+.persons {
+	$self: &;
+	display: flex;
+
+	@include media ('<=md') {
+		flex-wrap: wrap;
+	}
+
+	@include media ('<=xs') {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+	}
+
+	&__item {
+		flex-basis: 31%;
+		margin-right: 3.4%;
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include media ('<=md') {
+			flex-basis: 47%;
+			margin-right: 3%;
+			margin-top: 3.5%;
+			margin-bottom: 3.5%;
+		}
+
+		@include media ('<=xs') {
+			flex-basis: auto;
+			margin-right: 0;
+			&:nth-child(even) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__name {
+		font-family: "RCB";
+		font-size: 13px;
+		line-height: 1.231;
+		color: $colorText;
+		text-transform: uppercase;
+		margin: 5.5% 0 0 0;
+		@include media ('>=xxlg') {
+			@include dynamicText (81.25%, 26, 13, 1500px, 3000, 1500);
+		}
+	}
+	
+	&__post {
+		font-size: 12px;
+		line-height: 1.333;
+		color: $colorText;
+		text-transform: uppercase;
+		margin-top: 5.5% 0 0 0;
+		@include media ('>=xxlg') {
+			@include dynamicText (75%, 24, 12, 1500px, 3000, 1500);
+		}
+	}
+
+	&__cv {
+		font-size: 14px;
+		line-height: 1.143;
+		color: $red;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding-right: 22px;
+		background: url(images/icons-sprite.svg#icon-arrow_left-view-red) right center / 13px 15px no-repeat transparent;
+		span {
+			border-bottom: 1px solid transparent;
+			transition-duration: 500ms;
+			transition-property: border-color;
+		}
+
+		&:hover {
+			span {
+				border-color: $red;
+			}
+		}
+
+		@include media ('>=xxlg') {
+			@include dynamicText (87.5%, 28, 14, 1500px, 3000, 1500);
+		}
+	}
+
+	&__socials {
+
+	}
+
+}

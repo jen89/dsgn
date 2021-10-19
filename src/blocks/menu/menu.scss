@@ -1,0 +1,93 @@
+$menuBg: #f8c255;
+
+.menu {
+	$self: &;
+	position: absolute;
+	right: 11%;
+	top: 50px;
+
+	@include media ('<=md') {
+		right: 30px;
+		top: 30px;
+	}
+
+	@include media ('<=sm') {
+		height: 100%;
+	}
+
+	&__list {
+		display: none;
+		align-items: center;
+		flex-wrap: wrap;
+		min-width: 725px;
+		background-color: $menuBg;
+		margin: 0;
+		padding: 0 119px 0 25px;
+		box-sizing: border-box;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -9999;
+		&_active {
+			display: flex;
+			z-index: 1;
+			animation-duration: 500ms;
+			animation-name: menu;
+			@include media ('<=sm') {
+				display: block;
+				min-width: auto;
+				padding: 15px 70px 0 25px;
+				overflow-y: auto;
+			}
+		}
+
+		@include media ('>=xxlg') {
+			min-width: 1100px;
+		}
+	}
+
+	&__link {
+	font-size: 14px;
+	line-height: 1.786;
+	color: $white;
+	padding: 30px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition-duration: 500ms;
+	transition-property: color;
+
+	@include media ('>=xxlg') {
+		@include dynamicText(87.5%, 28, 14, 1500px, 3000, 1500);
+	}
+
+	
+	@include media ('<=sm') {
+		display: block;
+		padding: 7px 80px 7px 0;
+	}
+
+		&:hover {
+			color: $black;
+		}
+	}
+
+	&__hamburger {
+		width: 119px;
+		height: 114px;
+		@include media ('<=sm') {
+			width: 70px;
+			height: 70px;
+		}
+	}
+
+	@keyframes menu {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+}

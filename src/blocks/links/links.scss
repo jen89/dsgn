@@ -1,0 +1,26 @@
+.links {
+	$self: &;
+
+	&__link {
+		font-size: 13px;
+		color: $white;
+		text-transform: uppercase;
+		line-height: 1.077;
+		text-decoration: none;
+		box-sizing: border-box;
+		padding: 0 30px;
+		transition-property: color;
+		transition-duration: 500ms;
+		position: relative;
+		z-index: 2;
+		@include media ('>=xxlg') {
+			@include dynamicText (81.25%, 26, 13, 1500px, 3000, 1500);
+		}
+	
+	&:hover {
+		color: $black;
+		background: url(images/icons-sprite.svg#icon-arrow-view-white) center left/ 19px 15px no-repeat transparent;
+	}
+	}
+
+}

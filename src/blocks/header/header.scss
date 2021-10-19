@@ -1,0 +1,119 @@
+.header {
+	$self: &;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	@include media ('<=xs') {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	&__left {
+		grid-column: span 11;
+		padding-left: 15.9%;
+		padding-top: 4.8%;
+		padding-bottom: 8.7%;
+		background: url(images/bg-header_left.png) 100% center / 100% no-repeat transparent;
+		@media (min-resolution: 2dppx),  (min-width:1500px)  {
+			background: url(images/bg-header_left-2x.png) 100% center / 100% no-repeat transparent;
+		}
+		@include media ('<=md') {
+			grid-column: span 9;
+		}
+		@include media ('<=xs') {
+			grid-column: span 1;
+			grid-row: 2 / 3;
+		}
+	}
+
+	&__logo {
+		display: block;
+		max-width: 100%;
+	}
+	&__slogon {
+		font-size: 18px;
+		color: $colorText;
+		text-transform: uppercase;
+		line-height: 1;
+		margin-top: 5px;
+		@include media ('>=xxlg') {
+			@include dynamicText (112.5%, 36, 18, 1500px, 3000, 1500);
+		}
+	}
+
+	&__socials {
+		margin: 60px 0 15px 15px;
+	}
+	
+	&__right {
+		grid-column: span 5;
+		background-color: $second;
+		position: relative;
+		padding-top: 10.7%;
+		&::before {
+			content: '';
+			background: url(images/icons-sprite.svg#icon-line-view-white) top center no-repeat transparent;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			z-index: 0;
+		}
+		@include media ('<=md') {
+			grid-column: span 7;
+		}
+		@include media ('<=xs') {
+			grid-column: span 1;
+			grid-row: 1 / 2;
+		}
+
+	}
+
+	&__adderess {
+		font-size: 13px;
+		color: $white;
+		text-transform: uppercase;
+		line-height: 1.077;
+		position: absolute;
+		bottom: 36.5%;
+		left: 12.9%;
+		margin: 0;
+		@include media ('<=xs') {
+			margin-left: 10%;
+			margin-top: 10%;
+			position: static;
+		}
+		@include media ('>=xxlg') {
+			@include dynamicText (81.25%, 26, 18, 1500px, 3000, 1500);
+		}
+	}
+
+	&__contacts {
+		font-size: 13px;
+		text-transform: uppercase;
+		line-height: 1.077;
+		position: absolute;
+		left: 29%;
+		bottom: 20%;
+		margin: 0;
+		@include media ('<=xs') {
+			margin: 20% 0 20% 35%;
+			position: static;
+		}
+		@include media ('>=xxlg') {
+			@include dynamicText (81.25%, 26, 18, 1500px, 3000, 1500);
+		}
+	}
+
+	&__phone, &__email {
+		display: inline-block;
+		color: $white;
+		text-decoration: none;
+		line-height: 1.077;
+		transition-property: color;
+		transition-duration: 500ms;
+		&:hover {
+			color: $activeTextcolor;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.like {
+	$self: &;
+
+	&__btn {
+		border: none;
+		background: none;
+		box-shadow: none;
+		padding: 0;
+		cursor: pointer;
+		svg{
+		width: 24px;
+		height: 22px;
+		transition-duration: 500ms;
+		transition-property: fill;
+		}
+		&:hover {
+			svg {
+				fill: $red;
+			}
+		}
+	}
+
+	&__counts {
+		display: block;
+		font-size: 11px;
+		font-family: "RCL";
+		color: $red;
+		text-transform: uppercase;
+		line-height: 1.091;
+		margin: 5px 0 0 0;
+		@include media ('>=xxlg') {
+			@include dynamicText (68.75%, 22, 11, 1500px, 3000, 1500);
+		}
+	}
+
+}
