@@ -491,8 +491,8 @@
 			transition-property: border-color;
 			transition-duration: 500ms;
 		}
-		@include media ('>=xxxxlg') {
-			@include dynamicText (12.5%, 36, 18, 1500px, 3000, 1500);
+		@include media ('>=xxlg') {
+			@include dynamicText (112.5%, 36, 18, 1500px, 3000, 1500);
 		}
 
 		&:hover {
