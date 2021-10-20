@@ -9,7 +9,7 @@
 
 	&__map {
 		grid-column: span 1;
-		background-color: green;
+		background-color: #7acec3;
 
 		@include media ('<=sm') {
 			padding-bottom: 75%;
